@@ -1,0 +1,2 @@
+Flask==1.1.1
+pyscreenshot==0.5.1
