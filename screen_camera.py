@@ -12,9 +12,8 @@ class Camera(BaseCamera):
     def frames():
         while True:
             time.sleep(1)
-            with tempfile.TemporaryFile('rwb') as fp:
-                screen = ImageGrab.grab()
-                screen.save(fp, format='JPEG')
-                fp.seek(0)
+            screen = ImageGrab.grab()
+            screen.save('latest.JPEG', format='JPEG')
+            with open('latest.JPEG', 'rb') as fp:
                 yield fp.read()
 
